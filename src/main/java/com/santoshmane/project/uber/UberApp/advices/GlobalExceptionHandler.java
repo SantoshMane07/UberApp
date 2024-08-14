@@ -2,7 +2,7 @@ package com.santoshmane.project.uber.UberApp.advices;
 
 
 import com.santoshmane.project.uber.UberApp.exceptions.ResourceNotFoundException;
-import com.santoshmane.project.uber.UberApp.exceptions.RunTimeConflictException;
+import com.santoshmane.project.uber.UberApp.exceptions.RuntimeConflictException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -53,8 +53,8 @@ public class GlobalExceptionHandler {
         return buildErrorResponseEntity(apiError);
     }
 
-    @ExceptionHandler(RunTimeConflictException.class)
-    public ResponseEntity<ApiResponse<?>> handleRunTimeConflictException(RunTimeConflictException exception){
+    @ExceptionHandler(RuntimeConflictException.class)
+    public ResponseEntity<ApiResponse<?>> handleRunTimeConflictException(RuntimeConflictException exception){
         ApiError apiError = ApiError.builder()
                 .status(HttpStatus.CONFLICT)
                 .message(exception.getMessage())
