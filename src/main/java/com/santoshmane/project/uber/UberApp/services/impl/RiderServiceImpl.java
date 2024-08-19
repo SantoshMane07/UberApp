@@ -24,6 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -125,7 +126,10 @@ public class RiderServiceImpl implements RiderService {
 
     @Override
     public Rider getCurrentRider() {
-        //TODO - get rider from spring security
-        return riderRepository.findById(1L).orElseThrow(()-> new ResourceNotFoundException("Rider not found by id: "+1));
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        return riderRepository.findByUser(user).orElseThrow(() -> new ResourceNotFoundException(
+                "Rider not associated with user with id: "+user.getId()
+        ));
     }
 }
