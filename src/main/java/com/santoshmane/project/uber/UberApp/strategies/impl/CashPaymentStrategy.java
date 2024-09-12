@@ -27,7 +27,5 @@ public class CashPaymentStrategy implements PaymentStrategy {
 
         payment.setPaymentStatus(PaymentStatus.CONFIRMED);
         paymentRepository.save(payment);
-
-
     }
 }

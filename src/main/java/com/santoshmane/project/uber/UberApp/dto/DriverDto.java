@@ -11,6 +11,8 @@ public class DriverDto {
 
     private Long id;
 
+    private Long adharNo;
+
     private UserDto user;
 
     private Double rating;

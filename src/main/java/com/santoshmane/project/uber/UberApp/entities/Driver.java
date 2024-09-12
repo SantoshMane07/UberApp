@@ -18,6 +18,8 @@ public class Driver {
     @Id
     private Long id;
 
+    private Long adharNo;
+
     private Double rating;
 
     @OneToOne
