@@ -1,6 +1,6 @@
 INSERT INTO app_user (name, email, password) VALUES
 ('Prem Mane', 'prem@gmail.com', '$2a$10$8GxoI/UERAw2v.oJzBVcM.OtcmZELOAdXRDTU92MjoFuS3oelREYi'),
-('Vivaan Khanna', 'vivaan.khanna@example.com', '$2a$10$8GxoI/UERAw2v.oJzBVcM.OtcmZELOAdXRDTU92MjoFuS3oelREYi'),
+('John', 'john@gmail.com', '$2a$10$8GxoI/UERAw2v.oJzBVcM.OtcmZELOAdXRDTU92MjoFuS3oelREYi'),
 ('Aditya Verma', 'aditya.verma@example.com', '$2a$10$8GxoI/UERAw2v.oJzBVcM.OtcmZELOAdXRDTU92MjoFuS3oelREYi'),
 ('Vihaan Kapoor', 'vihaan.kapoor@example.com', '$2a$10$8GxoI/UERAw2v.oJzBVcM.OtcmZELOAdXRDTU92MjoFuS3oelREYi'),
 ('Arjun Patel', 'arjun.patel@example.com', '$2a$10$8GxoI/UERAw2v.oJzBVcM.OtcmZELOAdXRDTU92MjoFuS3oelREYi'),
@@ -116,9 +116,9 @@ INSERT INTO user_roles (user_id, roles) VALUES
 (38, 'RIDER'),
 (38, 'DRIVER'),
 (39, 'RIDER'),
-(39, 'DRIVER'),
-(40, 'RIDER'),
-(40, 'DRIVER');
+(39, 'DRIVER');
+--(40, 'RIDER'),
+--(40, 'DRIVER');
 
 INSERT INTO rider (user_id, rating) VALUES
 (1, 4.9);
@@ -161,8 +161,8 @@ INSERT INTO driver (user_id, rating, available, current_location) VALUES
 (36, 4.3, true, ST_GeomFromText('POINT(77.2455 28.6399)', 4326)),
 (37, 4.6, true, ST_GeomFromText('POINT(77.2465 28.6419)', 4326)),
 (38, 4.4, true, ST_GeomFromText('POINT(77.2475 28.6439)', 4326)),
-(39, 4.7, true, ST_GeomFromText('POINT(77.2485 28.6459)', 4326)),
-(40, 4.8, true, ST_GeomFromText('POINT(77.2495 28.6479)', 4326));
+(39, 4.7, true, ST_GeomFromText('POINT(77.2485 28.6459)', 4326));
+--(40, 4.8, true, ST_GeomFromText('POINT(77.2495 28.6479)', 4326));
 
 INSERT INTO wallet (user_id, balance) VALUES
 (1, 100),
